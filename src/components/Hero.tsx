@@ -101,7 +101,7 @@ export function Hero() {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative min-h-[100dvh] w-full flex items-end pb-[10vh] px-5 sm:px-8 md:px-12 xl:px-20 overflow-hidden bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)]">
+        <section ref={containerRef} className="relative min-h-[100dvh] w-full flex items-end pb-[10vh] px-5 sm:px-8 md:px-12 xl:px-20 bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)] z-10 transition-colors">
 
             {/* Background Video */}
             <div className="absolute inset-0 z-0 w-full h-full pointer-events-none overflow-hidden bg-black">
