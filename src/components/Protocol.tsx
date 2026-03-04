@@ -20,9 +20,15 @@ const steps = [
     },
     {
         num: "03",
-        title: "Adventure Ready",
-        desc: "Purpose-built capability. Rugged, high-clearance vehicles equipped to conquer terrain and elevate your weekend expeditions.",
+        title: "Road Trip Ready",
+        desc: "Hit the open road in absolute comfort. Spacious SUVs and crossovers designed for long coastal driving, rugged weekend getaways, and creating unforgettable memories.",
         image: "https://images.unsplash.com/photo-1611001871555-1a09975c1975?auto=format&fit=crop&q=80&w=2940"
+    },
+    {
+        num: "04",
+        title: "Family Cars",
+        desc: "Space, safety, and versatility for the whole crew. Premium SUVs and people carriers with ample cargo room and top-tier safety features for total peace of mind.",
+        image: "https://images.unsplash.com/photo-1549399542-7e3f8b792ce6?auto=format&fit=crop&q=80&w=2940"
     }
 ];
 
