@@ -65,7 +65,7 @@ function InteractiveCard({ image, imagePosition }: { image: string, imagePositio
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-full overflow-hidden flex items-center justify-center cursor-crosshair group bg-[var(--color-neutral-950)] min-h-[400px]"
+            className="relative w-full h-full overflow-hidden flex items-center justify-center cursor-crosshair group bg-[var(--color-neutral-950)] min-h-[250px] md:min-h-[400px]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
@@ -138,14 +138,14 @@ export function Protocol() {
                         <div className="card-inner w-full max-w-6xl h-full max-h-[800px] bg-[var(--color-neutral-50)] dark:bg-[var(--color-neutral-900)] rounded-[var(--radius-3xl)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] shadow-[var(--shadow-2xl)] overflow-hidden flex flex-col md:flex-row shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
 
                             {/* Content Side */}
-                            <div className="flex-1 p-12 md:p-20 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] relative z-10 bg-[var(--color-neutral-50)] dark:bg-[var(--color-neutral-900)]">
+                            <div className="flex-1 p-8 sm:p-12 md:p-20 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] relative z-10 bg-[var(--color-neutral-50)] dark:bg-[var(--color-neutral-900)]">
                                 <span className="font-mono text-xl md:text-2xl text-[var(--color-neutral-500)] dark:text-[var(--color-neutral-400)] mb-6 tracking-wider font-semibold">
                                     {step.num}
                                 </span>
-                                <h3 className="font-display font-bold text-4xl md:text-6xl text-[var(--color-neutral-1000)] dark:text-[var(--color-neutral-0)] mb-6 leading-tight">
+                                <h3 className="font-display font-bold text-3xl sm:text-4xl md:text-6xl text-[var(--color-neutral-1000)] dark:text-[var(--color-neutral-0)] mb-4 sm:mb-6 leading-tight">
                                     {step.title}
                                 </h3>
-                                <p className="font-sans text-lg md:text-xl text-[var(--color-neutral-600)] dark:text-[var(--color-neutral-400)] leading-relaxed max-w-lg">
+                                <p className="font-sans text-base sm:text-lg md:text-xl text-[var(--color-neutral-600)] dark:text-[var(--color-neutral-400)] leading-relaxed max-w-lg">
                                     {step.desc}
                                 </p>
                             </div>
