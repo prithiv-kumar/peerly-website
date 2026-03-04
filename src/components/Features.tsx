@@ -141,10 +141,9 @@ export function Features() {
 
                     {/* Card 2: Fair Pricing Mockup */}
                     <div className="feature-card bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)] rounded-[var(--radius-3xl)] p-8 shadow-[var(--shadow-sm)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] flex flex-col h-[480px]">
-                        <div className="flex-1 w-full max-w-[280px] mx-auto rounded-3xl overflow-hidden relative flex flex-col justify-center">
+                        <div className="flex-1 w-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] rounded-[var(--radius-2xl)] overflow-hidden relative flex items-center justify-center">
                             {/* The realistic hand holding phone mockup */}
-                            <img src={`${import.meta.env.BASE_URL}fair-pricing-mobile.png`} alt="Fair Pricing Peerly App" className="w-full h-auto object-contain mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 scale-105" />
-                            {/* Note: In dark mode, you might want to adjust the background or mix-blend to blend the image seamlessly */}
+                            <img src={`${import.meta.env.BASE_URL}fair-pricing-mobile.png`} alt="Fair Pricing Peerly App" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" />
                         </div>
                         <div className="mt-auto pt-8">
                             <h4 className="font-sans font-bold text-xl mb-2 text-[var(--color-neutral-1000)] dark:text-[var(--color-neutral-0)]">Fair Pricing</h4>
