@@ -10,25 +10,25 @@ const steps = [
         num: "01",
         title: "Elite Class",
         desc: "Uncompromising luxury. Featuring flagship sedans and premium SUVs from marque manufacturers, curated for executive presence and ultimate comfort.",
-        image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=2915&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=2915" // Red luxury car, sunny
     },
     {
         num: "02",
         title: "Electric Performance",
         desc: "The bleeding edge of automotive technology. Instant torque, zero emissions, and cutting-edge autonomous features for the modern driver.",
-        image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=2941&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=2941&auto=format&fit=crop" // Existing EV
     },
     {
         num: "03",
         title: "Road Trip Ready",
         desc: "Hit the open road in absolute comfort. Spacious SUVs and crossovers designed for long coastal driving, rugged weekend getaways, and creating unforgettable memories.",
-        image: "https://images.unsplash.com/photo-1611001871555-1a09975c1975?auto=format&fit=crop&q=80&w=2940"
+        image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=2940" // Coastal road trip SUV
     },
     {
         num: "04",
         title: "Family Cars",
         desc: "Space, safety, and versatility for the whole crew. Premium SUVs and people carriers with ample cargo room and top-tier safety features for total peace of mind.",
-        image: "https://images.unsplash.com/photo-1549399542-7e3f8b792ce6?auto=format&fit=crop&q=80&w=2940"
+        image: "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?auto=format&fit=crop&q=80&w=2940" // Family SUV, warm context
     }
 ];
 
