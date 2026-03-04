@@ -170,3 +170,103 @@
 .magnetic-btn:hover {
   transform: scale(1.02);
 }
+
+/* Custom DayPicker Styles */
+.day-picker-custom {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: var(--color-neutral-1000);
+  --rdp-background-color: var(--color-neutral-100);
+  --rdp-accent-color-dark: var(--color-neutral-0);
+  --rdp-background-color-dark: var(--color-neutral-900);
+}
+
+.dark .day-picker-custom {
+  --rdp-accent-color: var(--rdp-accent-color-dark);
+  --rdp-background-color: var(--rdp-background-color-dark);
+}
+
+.day-picker-custom .rdp-root {
+  --rdp-accent-color: var(--color-neutral-1000);
+  --rdp-accent-background-color: var(--color-neutral-1000);
+  --rdp-day_button-border-radius: 50%;
+  --rdp-selected-border: none;
+}
+
+.dark .day-picker-custom .rdp-root {
+  --rdp-accent-color: var(--color-neutral-0);
+  --rdp-accent-background-color: var(--color-neutral-0);
+}
+
+.day-picker-custom .rdp-caption_label,
+.day-picker-custom .rdp-weekday {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-neutral-900);
+}
+
+.dark .day-picker-custom .rdp-caption_label,
+.dark .day-picker-custom .rdp-weekday {
+  color: var(--color-neutral-100);
+}
+
+.day-picker-custom .rdp-day_button {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 50%;
+  color: var(--color-neutral-900);
+}
+
+.dark .day-picker-custom .rdp-day_button {
+  color: var(--color-neutral-100);
+}
+
+.day-picker-custom .rdp-selected {
+  color: var(--color-neutral-0) !important;
+}
+
+.dark .day-picker-custom .rdp-selected {
+  color: var(--color-neutral-1000) !important;
+}
+
+.day-picker-custom .rdp-range_middle {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-900) !important;
+  border-radius: 0;
+}
+
+.dark .day-picker-custom .rdp-range_middle {
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-100) !important;
+}
+
+.day-picker-custom .rdp-range_start {
+  background-color: var(--color-neutral-1000);
+  color: var(--color-neutral-0) !important;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.dark .day-picker-custom .rdp-range_start {
+  background-color: var(--color-neutral-0);
+  color: var(--color-neutral-1000) !important;
+}
+
+.day-picker-custom .rdp-range_end {
+  background-color: var(--color-neutral-1000);
+  color: var(--color-neutral-0) !important;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.dark .day-picker-custom .rdp-range_end {
+  background-color: var(--color-neutral-0);
+  color: var(--color-neutral-1000) !important;
+}
+
+.day-picker-custom .rdp-chevron {
+  fill: var(--color-neutral-900);
+}
+
+.dark .day-picker-custom .rdp-chevron {
+  fill: var(--color-neutral-100);
+}

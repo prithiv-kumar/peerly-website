@@ -1,14 +1,56 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MapPin, Calendar, Search, Star } from 'lucide-react';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import Player from '@vimeo/player';
+import { format } from 'date-fns';
+import { DayPicker, type DateRange } from 'react-day-picker';
+import 'react-day-picker/style.css';
+
+const LOCATIONS = [
+    "Lisbon",
+    "Porto",
+    "Faro",
+    "Cascais",
+    "Sintra",
+    "Coimbra",
+    "Braga",
+    "Évora",
+    "Aveiro",
+    "Madeira",
+    "Azores"
+];
 
 gsap.registerPlugin(TextPlugin);
 
 export function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const iframeRef = useRef<HTMLIFrameElement>(null);
+
+    const [locationQuery, setLocationQuery] = useState("");
+    const [isLocationOpen, setIsLocationOpen] = useState(false);
+
+    const [dateRange, setDateRange] = useState<DateRange | undefined>();
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+    const [calendarActiveInput, setCalendarActiveInput] = useState<'start' | 'end'>('start');
+
+    const locationRef = useRef<HTMLDivElement>(null);
+    const calendarRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (locationRef.current && !locationRef.current.contains(event.target as Node)) {
+                setIsLocationOpen(false);
+            }
+            if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
+                setIsCalendarOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    const filteredLocations = LOCATIONS.filter(loc => loc.toLowerCase().includes(locationQuery.toLowerCase()));
 
     useEffect(() => {
         if (iframeRef.current) {
@@ -97,7 +139,7 @@ export function Hero() {
                         <div className="bg-[var(--color-neutral-0)]/95 dark:bg-[var(--color-neutral-1000)]/95 backdrop-blur-xl rounded-[2.5rem] md:rounded-[var(--radius-full)] p-0 md:p-2 md:pr-2.5 shadow-[var(--shadow-2xl)] border border-[var(--color-neutral-200)]/50 dark:border-[var(--color-neutral-800)]/50 flex flex-col md:flex-row items-stretch md:items-center gap-0 md:gap-2 relative overflow-hidden group/search hover:border-[var(--color-neutral-300)] dark:hover:border-[var(--color-neutral-700)] transition-colors duration-300">
 
                             {/* Location Input */}
-                            <div className="flex-1 flex items-center gap-4 px-6 pt-6 pb-2 md:px-4 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors">
+                            <div ref={locationRef} className="flex-1 flex items-center gap-4 px-6 pt-6 pb-2 md:px-4 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors relative cursor-text text-left">
                                 <div className="w-10 h-10 md:w-8 md:h-8 shrink-0 rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] flex items-center justify-center text-[var(--color-neutral-500)] group-focus-within:text-[var(--color-brand-primary)] transition-colors">
                                     <MapPin className="w-5 h-5 md:w-4 md:h-4" />
                                 </div>
@@ -106,37 +148,86 @@ export function Hero() {
                                     <input
                                         type="text"
                                         placeholder="Malaga, Mál"
+                                        value={locationQuery}
+                                        onChange={(e) => {
+                                            setLocationQuery(e.target.value);
+                                            setIsLocationOpen(true);
+                                        }}
+                                        onFocus={() => setIsLocationOpen(true)}
                                         className="bg-transparent border-none outline-none text-base md:text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
                                     />
                                 </div>
+                                {/* Dropdown */}
+                                {isLocationOpen && (
+                                    <div className="absolute top-full left-0 right-0 mt-4 md:mt-6 bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)] rounded-[var(--radius-2xl)] shadow-[var(--shadow-2xl)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] overflow-hidden z-50">
+                                        <div className="max-h-[300px] overflow-y-auto p-2">
+                                            {filteredLocations.map((loc) => (
+                                                <button
+                                                    key={loc}
+                                                    onClick={() => {
+                                                        setLocationQuery(loc);
+                                                        setIsLocationOpen(false);
+                                                    }}
+                                                    className="w-full text-left px-4 py-3 hover:bg-[var(--color-neutral-100)] dark:hover:bg-[var(--color-neutral-900)] rounded-xl text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] transition-colors flex items-center gap-3"
+                                                >
+                                                    <MapPin className="w-4 h-4 text-[var(--color-neutral-400)]" />
+                                                    {loc}, Portugal
+                                                </button>
+                                            ))}
+                                            {filteredLocations.length === 0 && (
+                                                <div className="px-4 py-3 text-sm text-[var(--color-neutral-500)]">No locations found.</div>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
 
-                            {/* Pick Up Input */}
-                            <div className="flex-1 flex items-center gap-4 px-6 py-3 md:px-4 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors">
-                                <div className="w-10 h-10 md:w-8 md:h-8 shrink-0 rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] flex items-center justify-center text-[var(--color-neutral-500)] group-focus-within:text-[var(--color-brand-primary)] transition-colors">
-                                    <Calendar className="w-5 h-5 md:w-4 md:h-4" />
+                            {/* Dates Container */}
+                            <div ref={calendarRef} className="flex-[2] flex flex-col md:flex-row relative">
+                                {/* Pick Up Input */}
+                                <div
+                                    className="flex-1 flex items-center gap-4 px-6 py-3 md:px-4 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors cursor-pointer text-left"
+                                    onClick={() => { setIsCalendarOpen(true); setCalendarActiveInput('start'); }}
+                                >
+                                    <div className={`w-10 h-10 md:w-8 md:h-8 shrink-0 rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] flex items-center justify-center transition-colors ${isCalendarOpen && calendarActiveInput === 'start' ? 'text-[var(--color-brand-primary)]' : 'text-[var(--color-neutral-500)]'}`}>
+                                        <Calendar className="w-5 h-5 md:w-4 md:h-4" />
+                                    </div>
+                                    <div className="flex flex-col flex-1 pl-1 md:pl-0">
+                                        <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider mb-0.5">Start</label>
+                                        <div className={`text-base md:text-sm font-semibold truncate ${dateRange?.from ? 'text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)]' : 'text-[var(--color-neutral-400)]'}`}>
+                                            {dateRange?.from ? format(dateRange.from, "MMM d, yyyy") : "Add dates"}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col flex-1 pl-1 md:pl-0">
-                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider mb-0.5">Start</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Mar 9, 07:00"
-                                        className="bg-transparent border-none outline-none text-base md:text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
-                                    />
-                                </div>
-                            </div>
 
-                            {/* Drop Off Input */}
-                            <div className="flex-1 flex items-center gap-4 px-6 pt-2 pb-6 md:px-4 md:py-2 w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors">
-                                <div className="w-10 h-10 md:w-8 md:h-8 shrink-0 hidden md:block opacity-0"></div>
-                                <div className="flex flex-col flex-1 pl-[3.5rem] md:pl-2">
-                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider mb-0.5">End</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Mar 12, 07:00"
-                                        className="bg-transparent border-none outline-none text-base md:text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
-                                    />
+                                {/* Drop Off Input */}
+                                <div
+                                    className="flex-1 flex items-center gap-4 px-6 pt-2 pb-6 md:px-4 md:py-2 w-full group hover:bg-[var(--color-neutral-50)] dark:hover:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors cursor-pointer text-left"
+                                    onClick={() => { setIsCalendarOpen(true); setCalendarActiveInput('end'); }}
+                                >
+                                    <div className={`w-10 h-10 md:w-8 md:h-8 shrink-0 hidden md:flex rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] items-center justify-center transition-colors ${isCalendarOpen && calendarActiveInput === 'end' ? 'text-[var(--color-brand-primary)]' : 'opacity-0'}`}>
+                                        <Calendar className="w-5 h-5 md:w-4 md:h-4" />
+                                    </div>
+                                    <div className="flex flex-col flex-1 pl-[3.5rem] md:pl-2">
+                                        <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider mb-0.5">End</label>
+                                        <div className={`text-base md:text-sm font-semibold truncate ${dateRange?.to ? 'text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)]' : 'text-[var(--color-neutral-400)]'}`}>
+                                            {dateRange?.to ? format(dateRange.to, "MMM d, yyyy") : "Add dates"}
+                                        </div>
+                                    </div>
                                 </div>
+
+                                {/* Calendar Dropdown */}
+                                {isCalendarOpen && (
+                                    <div className="absolute top-full left-1/2 md:left-0 md:-translate-x-0 -translate-x-1/2 mt-4 md:mt-6 bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)] rounded-[var(--radius-3xl)] shadow-[var(--shadow-2xl)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] z-50 p-6 day-picker-custom overflow-hidden">
+                                        <DayPicker
+                                            mode="range"
+                                            selected={dateRange}
+                                            onSelect={setDateRange}
+                                            numberOfMonths={typeof window !== 'undefined' && window.innerWidth > 768 ? 2 : 1}
+                                            pagedNavigation
+                                        />
+                                    </div>
+                                )}
                             </div>
 
                             {/* Search Button */}
