@@ -42,13 +42,12 @@ export function Navbar() {
             </div>
 
             <div className="hidden md:flex items-center gap-6 font-sans text-sm font-medium">
-                <a href="#fleet" className="hover:-translate-y-[1px] transition-transform">Fleet</a>
-                <a href="#trust" className="hover:-translate-y-[1px] transition-transform">Trust & Safety</a>
                 <a href="#how-it-works" className="hover:-translate-y-[1px] transition-transform">How it Works</a>
+                <a href="#trust" className="hover:-translate-y-[1px] transition-transform">Trust & Safety</a>
             </div>
 
             <button className="magnetic-btn overflow-hidden relative group bg-[var(--color-neutral-1000)] dark:bg-[var(--color-neutral-0)] text-[var(--color-neutral-0)] dark:text-[var(--color-neutral-1000)] px-5 py-2.5 rounded-[var(--radius-full)] font-sans text-sm font-bold">
-                <span className="relative z-10">Sign Up</span>
+                <span className="relative z-10">Become a Host</span>
             </button>
         </nav>
     );
