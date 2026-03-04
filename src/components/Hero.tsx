@@ -94,53 +94,54 @@ export function Hero() {
 
                     <div className="cta-container mt-8 flex flex-col gap-6 pointer-events-auto w-full max-w-3xl">
                         {/* Glassmorphic Search Bar */}
-                        <div className="bg-[var(--color-neutral-0)]/90 dark:bg-[var(--color-neutral-1000)]/80 backdrop-blur-xl rounded-[var(--radius-full)] p-2 pr-2.5 shadow-[var(--shadow-2xl)] border border-[var(--color-neutral-200)]/50 dark:border-[var(--color-neutral-800)]/50 flex flex-col md:flex-row items-center gap-2 relative overflow-hidden group/search hover:border-[var(--color-neutral-300)] dark:hover:border-[var(--color-neutral-700)] transition-colors duration-300">
+                        <div className="bg-[var(--color-neutral-0)]/95 dark:bg-[var(--color-neutral-1000)]/95 backdrop-blur-xl rounded-[2.5rem] md:rounded-[var(--radius-full)] p-0 md:p-2 md:pr-2.5 shadow-[var(--shadow-2xl)] border border-[var(--color-neutral-200)]/50 dark:border-[var(--color-neutral-800)]/50 flex flex-col md:flex-row items-stretch md:items-center gap-0 md:gap-2 relative overflow-hidden group/search hover:border-[var(--color-neutral-300)] dark:hover:border-[var(--color-neutral-700)] transition-colors duration-300">
 
                             {/* Location Input */}
-                            <div className="flex-1 flex items-center gap-3 px-4 py-3 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-100)] dark:focus-within:bg-[var(--color-neutral-900)] rounded-[var(--radius-3xl)] transition-colors">
-                                <div className="w-8 h-8 rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] flex items-center justify-center text-[var(--color-neutral-500)] group-focus-within:text-[var(--color-brand-primary)] transition-colors">
-                                    <MapPin className="w-4 h-4" />
+                            <div className="flex-1 flex items-center gap-4 px-6 pt-6 pb-2 md:px-4 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors">
+                                <div className="w-10 h-10 md:w-8 md:h-8 shrink-0 rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] flex items-center justify-center text-[var(--color-neutral-500)] group-focus-within:text-[var(--color-brand-primary)] transition-colors">
+                                    <MapPin className="w-5 h-5 md:w-4 md:h-4" />
                                 </div>
-                                <div className="flex flex-col flex-1">
-                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider">Location</label>
+                                <div className="flex flex-col flex-1 pl-1 md:pl-0">
+                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider mb-0.5">Location</label>
                                     <input
                                         type="text"
                                         placeholder="Malaga, Mál"
-                                        className="bg-transparent border-none outline-none text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
+                                        className="bg-transparent border-none outline-none text-base md:text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
                                     />
                                 </div>
                             </div>
 
                             {/* Pick Up Input */}
-                            <div className="flex-1 flex items-center gap-3 px-4 py-3 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-100)] dark:focus-within:bg-[var(--color-neutral-900)] rounded-[var(--radius-3xl)] transition-colors">
-                                <div className="w-8 h-8 rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] flex items-center justify-center text-[var(--color-neutral-500)] group-focus-within:text-[var(--color-brand-primary)] transition-colors">
-                                    <Calendar className="w-4 h-4" />
+                            <div className="flex-1 flex items-center gap-4 px-6 py-3 md:px-4 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors">
+                                <div className="w-10 h-10 md:w-8 md:h-8 shrink-0 rounded-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-900)] flex items-center justify-center text-[var(--color-neutral-500)] group-focus-within:text-[var(--color-brand-primary)] transition-colors">
+                                    <Calendar className="w-5 h-5 md:w-4 md:h-4" />
                                 </div>
-                                <div className="flex flex-col flex-1">
-                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider">Start</label>
+                                <div className="flex flex-col flex-1 pl-1 md:pl-0">
+                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider mb-0.5">Start</label>
                                     <input
                                         type="text"
                                         placeholder="Mar 9, 07:00"
-                                        className="bg-transparent border-none outline-none text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
+                                        className="bg-transparent border-none outline-none text-base md:text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
                                     />
                                 </div>
                             </div>
 
                             {/* Drop Off Input */}
-                            <div className="flex-1 flex items-center gap-3 px-4 py-3 md:py-2 w-full group focus-within:bg-[var(--color-neutral-100)] dark:focus-within:bg-[var(--color-neutral-900)] rounded-[var(--radius-3xl)] transition-colors">
-                                <div className="flex flex-col flex-1 pl-2">
-                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider">End</label>
+                            <div className="flex-1 flex items-center gap-4 px-6 pt-2 pb-6 md:px-4 md:py-2 w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors">
+                                <div className="w-10 h-10 md:w-8 md:h-8 shrink-0 hidden md:block opacity-0"></div>
+                                <div className="flex flex-col flex-1 pl-[3.5rem] md:pl-2">
+                                    <label className="text-[10px] font-bold text-[var(--color-neutral-500)] uppercase tracking-wider mb-0.5">End</label>
                                     <input
                                         type="text"
                                         placeholder="Mar 12, 07:00"
-                                        className="bg-transparent border-none outline-none text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
+                                        className="bg-transparent border-none outline-none text-base md:text-sm font-semibold text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] placeholder-[var(--color-neutral-400)] w-full truncate"
                                     />
                                 </div>
                             </div>
 
                             {/* Search Button */}
-                            <button className="magnetic-btn bg-[#1a66ff] hover:bg-[#0052cc] text-white p-4 md:px-8 md:py-4 rounded-[var(--radius-full)] font-sans text-sm font-bold shadow-lg flex items-center justify-center gap-2 w-full md:w-auto transition-all transform active:scale-95">
-                                <Search className="w-4 h-4" />
+                            <button className="magnetic-btn bg-[#1a66ff] hover:bg-[#0052cc] text-white p-5 md:px-8 md:py-4 rounded-b-[2.5rem] md:rounded-[var(--radius-full)] font-sans text-base md:text-sm font-bold shadow-lg flex items-center justify-center gap-2 w-full md:w-auto transition-all transform md:active:scale-95 group-active:scale-[0.98] outline-none">
+                                <Search className="w-5 h-5 md:w-4 md:h-4" />
                                 <span>Search</span>
                             </button>
                         </div>
