@@ -231,14 +231,20 @@
 }
 
 .day-picker-custom .rdp-range_middle {
-  background-color: var(--color-neutral-100);
-  color: var(--color-neutral-900) !important;
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 0;
 }
 
+.day-picker-custom .rdp-range_middle .rdp-day_button {
+  color: var(--color-neutral-1000) !important;
+}
+
 .dark .day-picker-custom .rdp-range_middle {
-  background-color: var(--color-neutral-900);
-  color: var(--color-neutral-100) !important;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .day-picker-custom .rdp-range_middle .rdp-day_button {
+  color: var(--color-neutral-0) !important;
 }
 
 .day-picker-custom .rdp-range_start {
