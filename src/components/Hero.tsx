@@ -119,7 +119,7 @@ export function Hero() {
             <div className="absolute inset-x-0 bottom-0 z-1 h-2/3 bg-gradient-to-t from-[var(--color-neutral-0)] dark:from-[var(--color-neutral-1000)] via-[var(--color-neutral-0)]/70 dark:via-[var(--color-neutral-1000)]/70 to-transparent pointer-events-none" />
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-5xl pointer-events-none">
+            <div className="relative z-20 w-full max-w-5xl">
                 <div className="flex flex-col gap-6">
                     <h1 className="flex flex-col">
                         <span className="reveal-text-top font-sans font-bold text-[var(--color-neutral-1000)] dark:text-[var(--color-neutral-0)] text-[56px] leading-[1.1] md:text-[80px] lg:text-[90px] tracking-tighter ml-[-4px]">
