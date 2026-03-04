@@ -111,12 +111,12 @@ export function Hero() {
                     className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                     allow="autoplay; fullscreen; picture-in-picture"
                 ></iframe>
-                {/* Optional dark overlay to make text more legible */}
-                <div className="absolute inset-0 bg-black/40"></div>
+                {/* Overlay to ensure text legibility */}
+                <div className="absolute inset-0 bg-[var(--color-neutral-0)]/40 dark:bg-black/50"></div>
             </div>
 
-            {/* Overlay to ensure text legibility */}
-            <div className="absolute inset-x-0 bottom-0 z-1 h-2/3 bg-gradient-to-t from-[var(--color-neutral-0)] dark:from-[var(--color-neutral-1000)] via-[var(--color-neutral-0)]/70 dark:via-[var(--color-neutral-1000)]/70 to-transparent pointer-events-none" />
+            {/* Subtle edge fade to smoothly transition to the next section */}
+            <div className="absolute inset-x-0 bottom-0 z-1 h-32 md:h-48 bg-gradient-to-t from-[var(--color-neutral-0)] dark:from-[var(--color-neutral-1000)] to-transparent pointer-events-none" />
 
             {/* Content */}
             <div className="relative z-20 w-full max-w-5xl">
