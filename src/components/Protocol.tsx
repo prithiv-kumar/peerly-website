@@ -28,7 +28,7 @@ const steps = [
         num: "04",
         title: "Family Cars",
         desc: "Space, safety, and versatility for the whole crew. Premium SUVs and people carriers with ample cargo room and top-tier safety features for total peace of mind.",
-        image: "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?auto=format&fit=crop&q=80&w=2940" // Family SUV, warm context
+        image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?auto=format&fit=crop&q=80&w=2940" // Family driving around, sunny context
     }
 ];
 
