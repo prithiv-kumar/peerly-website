@@ -28,11 +28,12 @@ const steps = [
         num: "04",
         title: "Family Cars",
         desc: "Space, safety, and versatility for the whole crew. Premium SUVs and people carriers with ample cargo room and top-tier safety features for total peace of mind.",
-        image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?auto=format&fit=crop&q=80&w=2940" // Family driving around, sunny context
+        image: "https://movetocascais.com/wp-content/uploads/2025/04/20250416_1958_avtomobil-v-portugalii_simple_compose_01jrzrg5p5ey4tg0scx1nh11tn-min.png",
+        imagePosition: "center bottom"
     }
 ];
 
-function InteractiveCard({ image }: { image: string }) {
+function InteractiveCard({ image, imagePosition }: { image: string, imagePosition?: string }) {
     const containerRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
 
@@ -73,6 +74,7 @@ function InteractiveCard({ image }: { image: string }) {
                 src={image}
                 alt="Fleet Category"
                 className="absolute inset-0 w-full h-full object-cover scale-[1.05] filter brightness-75 group-hover:brightness-100 transition-all duration-700"
+                style={{ objectPosition: imagePosition || 'center' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-neutral-1000)]/60 via-transparent to-[var(--color-neutral-1000)]/20 pointer-events-none mix-blend-multiply" />
 
@@ -150,7 +152,7 @@ export function Protocol() {
 
                             {/* Canvas/SVG Interactive Image Side */}
                             <div className="flex-1 overflow-hidden relative border-t md:border-t-0 border-[var(--color-neutral-800)]">
-                                <InteractiveCard image={step.image} />
+                                <InteractiveCard image={step.image} imagePosition={step.imagePosition} />
                             </div>
 
                         </div>
