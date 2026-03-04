@@ -141,60 +141,10 @@ export function Features() {
 
                     {/* Card 2: Fair Pricing Mockup */}
                     <div className="feature-card bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)] rounded-[var(--radius-3xl)] p-8 shadow-[var(--shadow-sm)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] flex flex-col h-[480px]">
-                        <div className="flex-1 max-w-[260px] mx-auto w-full bg-[var(--color-neutral-900)] dark:bg-[var(--color-neutral-950)] rounded-[2.5rem] p-1.5 border-[6px] border-[var(--color-neutral-800)] dark:border-[var(--color-neutral-800)] shadow-inner overflow-hidden relative flex flex-col">
-                            {/* Dynamic Island Mimic */}
-                            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-[var(--color-neutral-1000)] rounded-full z-20"></div>
-
-                            {/* App Screen Content */}
-                            <div className="flex-1 overflow-hidden flex flex-col bg-[var(--color-neutral-50)] dark:bg-[var(--color-neutral-900)] rounded-[2rem] pt-10 px-3 pb-3 relative">
-                                <div className="space-y-3">
-                                    {/* Item 1: Citroen */}
-                                    <div className="bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)] rounded-xl p-2.5 flex gap-3 shadow-[var(--shadow-sm)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] relative z-10">
-                                        <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-white">
-                                            <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=400&q=80" alt="Citroen C3" className="w-full h-full object-cover" />
-                                        </div>
-                                        <div className="flex-1 flex flex-col justify-between py-0.5">
-                                            <div>
-                                                <h5 className="font-bold text-[11px] text-[var(--color-neutral-1000)] dark:text-[var(--color-neutral-0)] leading-tight">Citroen C3 (2024)</h5>
-                                                <div className="text-[7.5px] font-bold tracking-widest text-[var(--color-neutral-500)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-700)] rounded px-1.5 py-0.5 w-fit mt-1.5 uppercase">Meet Owner</div>
-                                                <div className="flex items-center gap-1 mt-1 text-[9px] text-[var(--color-neutral-500)]">
-                                                    <span className="text-purple-600 dark:text-purple-400 text-[10px]">★</span> <span className="text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] font-medium">5.0</span> (1) • 2.52 km
-                                                </div>
-                                            </div>
-                                            <div className="flex items-end justify-end mt-1">
-                                                <div className="text-[9px] text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] font-medium">
-                                                    <span className="line-through text-[var(--color-neutral-400)] mr-1 opacity-70">€37</span>
-                                                    <span className="font-bold text-[13px]">€29</span> <span className="text-[var(--color-neutral-500)]">per day</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Item 2: Hyundai */}
-                                    <div className="bg-[var(--color-neutral-0)] dark:bg-[var(--color-neutral-1000)] rounded-xl p-2.5 flex gap-3 shadow-[var(--shadow-sm)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] relative z-0 opacity-80 translate-y-2 blur-[0.5px] scale-[0.96]">
-                                        <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-black">
-                                            <img src="https://images.unsplash.com/photo-1519245659620-e859806a8f3b?auto=format&fit=crop&w=400&q=80" alt="Hyundai Kona" className="w-full h-full object-cover" />
-                                        </div>
-                                        <div className="flex-1 flex flex-col justify-between py-0.5">
-                                            <div>
-                                                <h5 className="font-bold text-[11px] text-[var(--color-neutral-1000)] dark:text-[var(--color-neutral-0)] leading-tight">Hyundai Kona (2022)</h5>
-                                                <div className="text-[7.5px] font-bold tracking-widest text-[var(--color-neutral-500)] border border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-700)] rounded px-1.5 py-0.5 w-fit mt-1.5 uppercase">Meet Owner</div>
-                                                <div className="flex items-center gap-1 mt-1 text-[9px] text-[var(--color-neutral-500)]">
-                                                    <span className="text-purple-600 dark:text-purple-400 text-[10px]">★</span> <span className="text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] font-medium">5.0</span> (4) • 4.73 km
-                                                </div>
-                                            </div>
-                                            <div className="flex items-end justify-end mt-1">
-                                                <div className="text-[9px] text-[var(--color-neutral-900)] dark:text-[var(--color-neutral-100)] font-medium">
-                                                    <span className="line-through text-[var(--color-neutral-400)] mr-1 opacity-70">€53</span>
-                                                    <span className="font-bold text-[13px]">€34</span> <span className="text-[var(--color-neutral-500)]">per day</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-[var(--color-neutral-50)] dark:from-[var(--color-neutral-900)] to-transparent pointer-events-none rounded-b-xl z-20"></div>
-                                    </div>
-                                </div>
-                                <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[var(--color-neutral-50)] dark:from-[var(--color-neutral-900)] to-transparent pointer-events-none rounded-b-[2rem] z-30"></div>
-                            </div>
+                        <div className="flex-1 w-full max-w-[280px] mx-auto rounded-3xl overflow-hidden relative flex flex-col justify-center">
+                            {/* The realistic hand holding phone mockup */}
+                            <img src="/fair-pricing-mobile.png" alt="Fair Pricing Peerly App" className="w-full h-auto object-contain mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 scale-105" />
+                            {/* Note: In dark mode, you might want to adjust the background or mix-blend to blend the image seamlessly */}
                         </div>
                         <div className="mt-auto pt-8">
                             <h4 className="font-sans font-bold text-xl mb-2 text-[var(--color-neutral-1000)] dark:text-[var(--color-neutral-0)]">Fair Pricing</h4>
