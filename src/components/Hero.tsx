@@ -136,7 +136,7 @@ export function Hero() {
 
                     <div className="cta-container mt-8 flex flex-col gap-6 pointer-events-auto w-full max-w-3xl">
                         {/* Glassmorphic Search Bar */}
-                        <div className="bg-[var(--color-neutral-0)]/95 dark:bg-[var(--color-neutral-1000)]/95 backdrop-blur-xl rounded-[2.5rem] md:rounded-[var(--radius-full)] p-0 md:p-2 md:pr-2.5 shadow-[var(--shadow-2xl)] border border-[var(--color-neutral-200)]/50 dark:border-[var(--color-neutral-800)]/50 flex flex-col md:flex-row items-stretch md:items-center gap-0 md:gap-2 relative overflow-hidden group/search hover:border-[var(--color-neutral-300)] dark:hover:border-[var(--color-neutral-700)] transition-colors duration-300">
+                        <div className="bg-[var(--color-neutral-0)]/95 dark:bg-[var(--color-neutral-1000)]/95 backdrop-blur-xl rounded-[2.5rem] md:rounded-[var(--radius-full)] p-0 md:p-2 md:pr-2.5 shadow-[var(--shadow-2xl)] border border-[var(--color-neutral-200)]/50 dark:border-[var(--color-neutral-800)]/50 flex flex-col md:flex-row items-stretch md:items-center gap-0 md:gap-2 relative overflow-visible group/search hover:border-[var(--color-neutral-300)] dark:hover:border-[var(--color-neutral-700)] transition-colors duration-300">
 
                             {/* Location Input */}
                             <div ref={locationRef} className="flex-1 flex items-center gap-4 px-6 pt-6 pb-2 md:px-4 md:py-2 md:border-r border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-800)] w-full group focus-within:bg-[var(--color-neutral-50)] dark:focus-within:bg-[var(--color-neutral-900)] md:rounded-[var(--radius-3xl)] transition-colors relative cursor-text text-left">
