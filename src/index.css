@@ -220,11 +220,13 @@
   color: var(--color-neutral-100);
 }
 
-.day-picker-custom .rdp-selected {
+.day-picker-custom .rdp-selected,
+.day-picker-custom .rdp-selected .rdp-day_button {
   color: var(--color-neutral-0) !important;
 }
 
-.dark .day-picker-custom .rdp-selected {
+.dark .day-picker-custom .rdp-selected,
+.dark .day-picker-custom .rdp-selected .rdp-day_button {
   color: var(--color-neutral-1000) !important;
 }
 
